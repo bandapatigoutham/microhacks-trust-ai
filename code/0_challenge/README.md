@@ -217,5 +217,9 @@ After you complete all the success criteria, follow the steps in the [Challenge 
 
 # CHALLENGE 0 COMPLETE!!!!!
 
+# Contributors to this Microhack
+
+We are grateful to the hard-work and thought leadership done by Pamela Fox and Matt Gotteiner. We were inspired and informed by their work.  We have reused their https://aka.ms/ragchat repo and studied their podcast series RAG Deep dive http://aka.ms/ragdeepdive.  We highly recommend to watch this content when preparing your applications to move into production.
+
 
 <!-- TThe current Microhack repo relies on all the source code from Azure-Search-OpenAI-Demo repo.  We plan to take a snapshot of this code in the next release and merge it into the Microhack repo.  This way we can better maintain change control while upgrading to Foundry v2.  -->
