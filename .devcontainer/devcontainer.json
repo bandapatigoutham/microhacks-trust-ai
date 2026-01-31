@@ -30,7 +30,44 @@
     "forwardPorts": [
         50505
     ],
-    "postCreateCommand": "./devcontainer/post-create.sh",
+    "postCreateCommand": "{
+    "name": "Trusthworthy AI Demo Environment",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "22",
+            "nodeGypDependencies": false
+        },
+        "ghcr.io/devcontainers/features/azure-cli:1.2.5": {},
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+        "ghcr.io/azure/azure-dev/azd:latest": {},
+		"ghcr.io/devcontainers/features/powershell:1": {},
+		"ghcr.io/devcontainers/features/github-cli:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-azuretools.azure-dev",
+                "ms-azuretools.vscode-bicep",
+                "ms-python.python",
+                "astral-sh.ty",
+                "esbenp.prettier-vscode",
+                "DavidAnson.vscode-markdownlint",
+				"ms-windows-ai-studio.ms-windows-ai-studio"
+            ]
+        }
+    },
+    "forwardPorts": [
+        50505
+    ],
+    "postCreateCommand": "chmod +x ./.devcontainer/post-create.sh && ./.devcontainer/post-create.sh",
+    "remoteUser": "vscode",
+    "hostRequirements": {
+        "memory": "8gb"
+    }
+}",
     "remoteUser": "vscode",
     "hostRequirements": {
         "memory": "8gb"
