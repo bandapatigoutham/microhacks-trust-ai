@@ -81,6 +81,39 @@ jobs:
           test -f "$ENV_FILE"
           grep -v '^\s*#' "$ENV_FILE" | grep -E '^[A-Za-z_][A-Za-z0-9_]*=' >> "$GITHUB_ENV"
 
+      - name: Normalize AZURE_CONTAINER_APP_URL (strip quotes)
+        shell: bash
+        run: |
+          set -e
+          echo "Before: AZURE_CONTAINER_APP_URL=$AZURE_CONTAINER_APP_URL"
+
+          # Strip any surrounding single/double quotes
+          AZURE_CONTAINER_APP_URL="${AZURE_CONTAINER_APP_URL%\"}"
+          AZURE_CONTAINER_APP_URL="${AZURE_CONTAINER_APP_URL#\"}"
+          AZURE_CONTAINER_APP_URL="${AZURE_CONTAINER_APP_URL%\'}"
+          AZURE_CONTAINER_APP_URL="${AZURE_CONTAINER_APP_URL#\'}"
+
+          echo "After:  AZURE_CONTAINER_APP_URL=$AZURE_CONTAINER_APP_URL"
+          echo "AZURE_CONTAINER_APP_URL=$AZURE_CONTAINER_APP_URL" >> "$GITHUB_ENV"
+
+      - name: Print backend URL
+        run: |
+          python -c "import os; print(os.getenv('AZURE_CONTAINER_APP_URL'))"
+
+      - name: Probe chat endpoint
+        shell: bash
+        run: |
+          curl -sS -o /dev/null -w "/chat=%{http_code}\n" \
+            -X POST "$AZURE_CONTAINER_APP_URL/chat" \
+            -H "Content-Type: application/json" \
+            -d '{"message":"ping","conversation_history":[],"max_tokens":16}' || true
+
+          curl -sS -o /dev/null -w "/api/chat=%{http_code}\n" \
+            -X POST "$AZURE_CONTAINER_APP_URL/api/chat" \
+            -H "Content-Type: application/json" \
+            -d '{"message":"ping","conversation_history":[],"max_tokens":16}' || true
+
+
       - name: Install evaluation dependencies
         run: |
           python -m pip install --upgrade pip
