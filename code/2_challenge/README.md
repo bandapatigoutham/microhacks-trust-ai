@@ -103,7 +103,7 @@ The AI Red Team Agent will be able to assess risk categories and attack strategi
 
 ## Success Criteria
 
-1.	WAF Compliance exceeds 70 to 80% (varies by intensity).  Review the spreadsheet and open the dashboard tab.  Find the Review status and see if the number of open items is less than 30%.  If this is not the case, you’ll need to review the checklist until you mitigate enough open issues that allows you to reach this threshold.
+1.	Review the checklist of items and see which ones are "Open" and "Not Verified".  Peform a gap analysis and determine what needs to be done to ensure compliance.  This exercise is to help you gain familiarity with the Azure AI Landing Zones for future reference.  The exercise is not meant for you to complete/resolve these issues in your Azure Tenant.  For reference, we leveraged this deployment [private network](https://github.com/Azure-Samples/azure-search-openai-demo/blob/main/docs/deploy_private.md) as our baseline if you like to understand the final deployment.
 
 1. Automated Quality evaluations are more than 90% for each metric and the safety scores are at 100% for all metrics.  Review the list of quality metrics; groundedness and relevance for quality while safety metrics are hate, sexual, violence and self-harm.  Review the summary score of these four metrics and ensure it is at 100%.
 
