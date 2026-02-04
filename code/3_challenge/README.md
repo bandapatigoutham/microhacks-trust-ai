@@ -237,7 +237,7 @@ With monitoring in place, perform a live test. The Red Team (one or two particip
 
 ---
 
-![Red flag questions demo](../../media/RedBlueSimulation-v2.gif)
+![Red flag questions demo](../../media/CH3-Redteam-demo.gif)
 
 
 ## Success Criteria
