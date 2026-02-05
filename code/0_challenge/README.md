@@ -67,9 +67,9 @@ We will set up the initial environment for you to build on top of during your Mi
     ```
 1. Activate Python Virtual Environment
 
-    Linux ```source .evalenv/bin/activate```
+    Mac OS X or Linux ```source .evalenv/bin/activate```
 
-    CMD ```.evalenv\Scripts\activate.bat```
+    Windows CMD ```.evalenv\Scripts\activate.bat```
 
     Powershell ```.evalenv\Scripts\Activate.ps1```
 

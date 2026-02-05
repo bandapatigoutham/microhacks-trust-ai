@@ -14,32 +14,32 @@ A simple chat interface that uses Azure OpenAI with managed identity authenticat
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                  Azure Container Apps                        │
+│                  Azure Container Apps                       │
 │  ┌─────────────────────────────────────────────────────┐    │
-│  │                   nginx (port 8080)                  │    │
+│  │                   nginx (port 8080)                 │    │
 │  │         ┌──────────────┬──────────────┐             │    │
 │  │         │   /          │   /api/*     │             │    │
 │  │         │   /chat      │   /chat      │             │    │
 │  │         ▼              ▼              │             │    │
-│  │  ┌──────────┐    ┌──────────┐        │             │    │
-│  │  │Streamlit │    │ FastAPI  │        │             │    │
-│  │  │ (8501)   │    │ (8000)   │        │             │    │
-│  │  └────┬─────┘    └────┬─────┘        │             │    │
-│  │       └───────┬───────┘              │             │    │
-│  │               ▼                      │             │    │
-│  │       Azure OpenAI Client            │             │    │
-│  │                                      │             │    │
-│  │       User Assigned Managed Identity │             │    │
-│  └──────────────────────────────────────┘             │    │
+│  │  ┌──────────┐    ┌──────────┐         │             │    │
+│  │  │Streamlit │    │ FastAPI  │         │             │    │
+│  │  │ (8501)   │    │ (8000)   │         │             │    │
+│  │  └────┬─────┘    └────┬─────┘         │             │    │
+│  │       └───────┬───────┘               │             │    │
+│  │               ▼                       │             │    │
+│  │       Azure OpenAI Client             │             │    │
+│  │                                       │             │    │
+│  │       User Assigned Managed Identity  │             │    │
+│  └───────────────────────────────────────┘             │    │
 └─────────────────────────────────────────────────────────────┘
                                │
                                ▼
                 ┌──────────────────────────┐
                 │    Azure OpenAI          │
-                │    (Cognitive Services)   │
+                │    (Cognitive Services)  │
                 │                          │
                 │  • gpt-4o-mini           │
-                │  • Managed Identity Auth  │
+                │  • Managed Identity Auth │
                 └──────────────────────────┘
 ```
 
@@ -51,9 +51,14 @@ A simple chat interface that uses Azure OpenAI with managed identity authenticat
 - Docker (for local container testing)
 - Python 3.11+
 
-## Local Development
+## Local Development  on Mac OS X or Linux
 
-1. **Set environment variables:**
+0. **Navigate to the `app` directory 
+   ```bash
+   cd app
+
+   ```
+1. **Set environment variables on Mac OS X or Linux:**
    ```bash
    export AZURE_OPENAI_ENDPOINT="https://your-openai-service.openai.azure.com/"
    export AZURE_OPENAI_CHAT_DEPLOYMENT="gpt-4o-mini"
@@ -61,6 +66,16 @@ A simple chat interface that uses Azure OpenAI with managed identity authenticat
 
 2. **Install dependencies:**
    ```bash
+   # Create a Local Environment
+   python3 -m venv .localenv
+
+   # Activate the Virtual Environment
+   source .localenv/bin/activate
+
+   # Update your local PIP version to the latest
+   pip install --upgrade pip
+
+   # Install the Python dependencies into the local environment 
    pip install -r requirements.txt
    ```
 
