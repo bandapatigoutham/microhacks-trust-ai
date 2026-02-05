@@ -11,7 +11,7 @@ We will set up the initial environment for you to build on top of during your Mi
 <br>
 <br>
 
-## Prerequisites for Local Environments (LINUX, Windows or MAC)
+## Prerequisites for Local Environments (Linux, Windows or MAC)
 
 1. A computer running Windows 11, macOS, or Linux.  Running on your local PC.
 1. An Azure subscription. If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/).
