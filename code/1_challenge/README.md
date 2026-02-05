@@ -150,7 +150,7 @@ Conducting this Responsible AI Impact Assessment not only mitigates risks but al
 4. Identified Risk: Misuse or unsafe requests (attempts to get the bot to violate policies or produce harmful content)
 
 	Mitigation Strategy:	
-	* Employ Azure AI Content Safety and Foundry guardrails (already active) ] to block disallowed content.
+	* Employ Azure AI Content Safety and Foundry guardrails (already active) to block disallowed content.
 	* Keep system and safety prompts in place to enforce refusals for out-of-scope questions.
 	* Conduct red-team testing (prompt injections, extreme inputs) and adjust safeguards if any gap is found.– Log and review misuse attempts to continuously improve defenses.
 

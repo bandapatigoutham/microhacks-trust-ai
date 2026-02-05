@@ -1,5 +1,5 @@
 {
-    "name": "Trusthworthy AI Demo Environment",
+    "name": "Trustworthy AI Demo Environment",
     "build": {
         "dockerfile": "Dockerfile"
     },

@@ -242,7 +242,7 @@ With monitoring in place, perform a live test. The Red Team (one or two particip
 
 ## Success Criteria
 
-- Deployment pipeline fail when evalutions don't meet baseline results. (Model Drift)
+- Deployment pipeline fail when evaluations don't meet baseline results. (Model Drift)
 - Production system emits telemetry; metrics, traces and logs
 - Red Team inputs are handled safely
 - Blue Team traces every interaction successfully
@@ -259,7 +259,7 @@ This achieves the **Operate capability of Responsible AI**.
 
 ## Learning Resources
 
-- [Best Pracices](https://azure.microsoft.com/en-us/blogagent-factory-top-5-agent-observability-best-practices-for-reliable-ai/)
+- [Best Practices](https://azure.microsoft.com/en-us/blogagent-factory-top-5-agent-observability-best-practices-for-reliable-ai/)
 
 - [Live metrics](https://learn.microsoft.com/en-us/azure/azure-monitor/app/live-stream?tabs=otel#get-started)
 

@@ -30,7 +30,7 @@ Microsoft has developed Azure Review Checklists available to allow customers an 
 
 1. Download the [AI Landing Zone Checklist](/docs/ch2_tai_review_checklist.xlsx) from this repo to your desktop for review.  The spreadsheet is prebuilt to reduce setup time for the Microhack.  There is a repo that contains instruction on how to implement it for your Generative AI Application.  [Azure Review Checklist](https://github.com/Azure/review-checklists/blob/main/spreadsheet/README.md).  We suggest for this hack to use the existing spreadsheet but for production deployments leverage the checklist to audit your system.
 
-2. Review the AI Landing Zone checklist items and their status to see which ones are Open, Fulfilled, Not Verified or Not required.  Go to the tab called, "Dashboard" and review the overall status by Design areas.  Review the list for familarity and discuss with team potential gaps.  This spreadsheet was built using a [private network](https://github.com/Azure-Samples/azure-search-openai-demo/blob/main/docs/deploy_private.md) but was not 100% compliant with Azure AI Landing Zones.
+2. Review the AI Landing Zone checklist items and their status to see which ones are Open, Fulfilled, Not Verified or Not required.  Go to the tab called, "Dashboard" and review the overall status by Design areas.  Review the list for familiarity and discuss with team potential gaps.  This spreadsheet was built using a [private network](https://github.com/Azure-Samples/azure-search-openai-demo/blob/main/docs/deploy_private.md) but was not 100% compliant with Azure AI Landing Zones.
 
       ![Alt text](/media/AILZ%20Dashboard.png "ALZ Review Checklist")
 </br>
@@ -65,13 +65,13 @@ In Challenge 1, we tested our application with a small subset of questions and h
 
 1. For more information on quality evaluation scripts, read the [Quality Evaluation](https://github.com/Azure-Samples/azure-search-openai-demo/blob/main/docs/evaluation.md) file for RAGCHAT application.
 
-1. The second set of evaluations will be for the safety metrics.  This scripts will generate by default 5 simulations which are adversial questions to submit to the target application.  Safety evaluations will ensure the answers are appropriate and do not contain harmful or sensitive content. Run this command in the terminal.
+1. The second set of evaluations will be for the safety metrics.  This scripts will generate by default 5 simulations which are adversarial questions to submit to the target application.  Safety evaluations will ensure the answers are appropriate and do not contain harmful or sensitive content. Run this command in the terminal.
 
    ```bash
    python ./scripts/05_safety_evals.py
    ```
    The parameters are:
-   * `--max_simulations`: The maximum number of simulated user queries. Default is `5`. The higher the number, the longer the evaluation will take. The default of `5` simulations will take about 1 minutes to run, which includes both the time to generate the simulated adversial questions and the time to evaluate it.  
+   * `--max_simulations`: The maximum number of simulated user queries. Default is `5`. The higher the number, the longer the evaluation will take. The default of `5` simulations will take about 1 minutes to run, which includes both the time to generate the simulated adversarial questions and the time to evaluate it.  
 
    We recommend keeping the max simulations at '5'.  For time/cost reasons, we are only using five simulations, but it is recommended for production workloads to test a larger number of simulations. For further instructions on [safety evaluations](https://github.com/Azure-Samples/azure-search-openai-demo/blob/main/docs/safety_evaluation.md), review this file for guidance.
  

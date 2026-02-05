@@ -5,7 +5,7 @@
 - Groundedness
 - Relevance
 - Document Retrieval
-- Response Compeletness
+- Response Completeness
 
 
 ## Biased or Uneven Answers

@@ -3,6 +3,7 @@
 If you’re running this workshop on your own, you'll need to deploy the workshop resources to your Azure subscription. Follow the instructions to deploy the workshop resources.
 
 ## Overview
+
 We will set up the initial environment for you to build on top of during your Microhack. This comprehensive setup includes configuring essential Azure services and ensuring access to all necessary resources. Participants will familiarize themselves with the architecture, gaining insights into how various components interact to create a cohesive solution. With the foundational environment in place, the focus will shift seamlessly to the first Microhack Challenge endeavor.  
 <br>
 <br>
@@ -23,6 +24,7 @@ We will set up the initial environment for you to build on top of during your Mi
 <br>
 
 ## Support Software
+
 * Azure Developer CLI: Download azd
 * Ensure the correct OS is selected
 * Powershell 7+ with AZ module (Windows only): Powershell, AZ Module
@@ -31,11 +33,13 @@ We will set up the initial environment for you to build on top of during your Mi
 <br>
 
 ## Prerequisites for CodeSpaces
+
 1. An Azure subscription. If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/).
 1. Validate [Python 3.13](https://www.python.org/downloads/) is setup in your environment or lower
 <br>
 
 ## Recommended Regions
+
 * Sweden Central (swedencentral)
 * France Central (francecentral)
 * US North Central (northcentralus)
@@ -46,17 +50,40 @@ We will set up the initial environment for you to build on top of during your Mi
 - **Alternative Region** for availability should be France Central for Azure OpenAI availability.
 <br>
 
-## Setup your Development Environment on your Local PC
+You can run this Microhack either on your local computer or in GitHub Codespaces. It is recommended that you use GitHub Codespaces. 
 
-1. Start the Microhack on Local Environment.
+## Setup your Development Environment on Codespaces (recommended)
+
+For Codespaces, go into your web browser and login to GitHub.
+
+1. <u>**Fork**</u> the [Microhack Trustworthy AI](https://github.com/microsoft/microhacks-trust-ai) repo into your GitHub account. This is requirement to FORK the repo into your account for CH3 due to GitHub Actions.
+        
+1.  `Click on Code` (Green) button and click on `+` button (Create a codespaces on main).  This will take a 10 minutes to provision a Codespaces instance.  For Codespaces only, it will setup your virtual environment and grant write permissions to necessary files.
+
+1. At the terminal window confirm the home directory ```/microhacks-trust-ai```
+
+1. Activate Python Virtual Environment (Linux)
+
+    ```bash
+    source .evalenv/bin/activate
+    ```
+<br>
+
+## Setup your Development Environment on your local workstation
+
+***Note*** You can skip this section if you are using GitHub Codespaces
+<details markdown=1>
+<summary markdown="span"><strong>Click to expand/collapse Local Workstation instructions</strong></summary>
+
+1. Start the Microhack on a local environment.
 
     a. Open a terminal window for local deployments and confirm prerequisites are complete
         
-    * <u>**Fork**</u> the [Microhack Trustworthy AI](https://github.com/microsoft/microhacks-trust-ai) repo into your Github account.  This is a requirement to FORK the repo into your account for CH3 due to Github Actions.
+    * <u>**Fork**</u> the [Microhack Trustworthy AI](https://github.com/microsoft/microhacks-trust-ai) repo into your GitHub account.  This is a requirement to FORK the repo into your account for CH3 due to GitHub Actions.
         
-    * Clone the <u>**FORKED REPO**</u> in your Github account to your local environment by running the following command:
+    * Clone the <u>**FORKED REPO**</u> in your GitHub account to your local environment by running the following command:
 
-        * ```git clone https://github.com/<Github username>/microhacks-trust-ai```
+        * ```git clone https://github.com/<GitHub username>/microhacks-trust-ai```
 
     * At the terminal window confirm the home directory ```/microhacks-trust-ai```
 
@@ -65,7 +92,7 @@ We will set up the initial environment for you to build on top of during your Mi
     ```bash
     python -m venv .evalenv
     ```
-1. Activate Python Virtual Environment
+1. Activate the Python Virtual Environment
 
     Mac OS X or Linux ```source .evalenv/bin/activate```
 
@@ -89,24 +116,7 @@ We will set up the initial environment for you to build on top of during your Mi
     ```bash
     chmod +x ./scripts/02_deploy_container_apps.sh
     ```
-
-<br>
-
-## Setup your Development Environment on Codespaces
-
-For Codespaces, go into your web browser and login to github.
-
-1. <u>**Fork**</u> the [Microhack Trustworthy AI](https://github.com/microsoft/microhacks-trust-ai) repo into your Github account. This is requirement to FORK the repo into your account for CH3 due to Github Actions.
-        
-1.  `Click on Code` (Green) button and click on `+` button (Create a codepspaces on main).  This will take a 10 minutes to provision a Codespaces instance.  For Codpespaces only, it will setup your virtual environment and grant write permissions to necessary files.
-
-1. At the terminal window confirm the home directory ```/microhacks-trust-ai```
-
-1. Activate Python Virtual Environment (LINUX)
-
-    ```bash
-    source .evalenv/bin/activate
-    ```
+</details>
 <br>
 
 ## Deploy the Azure Resources
@@ -169,7 +179,7 @@ After you complete all the success criteria, follow the steps in the [Challenge 
 
 ## Resources
 * Video series called, RAG Deep Dive https://aka.ms/ragdeepdive 
-* Alernative RAGCHAT repo https://aka.ms/ragchat#guidance   
+* Alternative RAGCHAT repo https://aka.ms/ragchat#guidance   
 * RAG Resources from RAGCHAT Repo https://aka.ms/ragchat#resources
 
 <br>
