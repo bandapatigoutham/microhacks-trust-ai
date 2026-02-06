@@ -24,13 +24,13 @@ In Challenge 2, participants take the role of a DevOps/AI engineer in charge of 
 
 ## Lab Activities
 
-### Lab 1 - WAF & Security Compliance
+### Lab 2.1 - WAF & Security Compliance
 
 Microsoft has developed Azure Review Checklists available to allow customers an automated way to validate that their infrastructure is aligned with the Secure Foundation Initiative and the Well Architected Framework (WAF).
 
-1. Download the [AI Landing Zone Checklist](/docs/ch2_tai_review_checklist.xlsx) from this repo to your desktop for review.  The spreadsheet is prebuilt to reduce setup time for the Microhack.  There is a repo that contains instruction on how to implement it for your Generative AI Application.  [Azure Review Checklist](https://github.com/Azure/review-checklists/blob/main/spreadsheet/README.md).  We suggest for this hack to use the existing spreadsheet but for production deployments leverage the checklist to audit your system.
+1. Open the [AI Landing Zone Checklist](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fgithub.com%2Fmicrosoft%2Fmicrohacks-trust-ai%2Fraw%2Fmain%2Fdocs%2Fch2_tai_review_checklist.xlsx) from this repo for your review.  The spreadsheet is prebuilt to reduce setup time for the Microhack.  There is a repo that contains instruction on how to implement it for your Generative AI Application.  [Azure Review Checklist](https://github.com/Azure/review-checklists/blob/main/spreadsheet/README.md).  We suggest for this hack to use the existing spreadsheet but for production deployments leverage the checklist to audit your system.
 
-2. Review the AI Landing Zone checklist items and their status to see which ones are Open, Fulfilled, Not Verified or Not required.  Go to the tab called, "Dashboard" and review the overall status by Design areas.  Review the list for familiarity and discuss with team potential gaps.  This spreadsheet was built using a [private network](https://github.com/Azure-Samples/azure-search-openai-demo/blob/main/docs/deploy_private.md) but was not 100% compliant with Azure AI Landing Zones.
+2. Review the AI Landing Zone checklist items and their status to see which ones are Open, Fulfilled, Not Verified or Not required.  Go to the tab called, "Dashboard" and review the overall status by Design areas.  Review the list for familiarity and discuss with the team any potential gaps.  This spreadsheet was built using a [private network](https://github.com/Azure-Samples/azure-search-openai-demo/blob/main/docs/deploy_private.md) but was not 100% compliant with Azure AI Landing Zones.
 
       ![Alt text](/media/AILZ%20Dashboard.png "ALZ Review Checklist")
 </br>
@@ -39,11 +39,11 @@ WAF & Security Compliance are now complete and the infrastructure is ready for p
 </br>
 
 
-### Lab 2 - Automated Quality & Safety Evaluations
+### Lab 2.2 - Automated Quality & Safety Evaluations
 
 </br>
 
-In Challenge 1, we tested our application with a small subset of questions and had a human judge gauge their accuracy. (Manual Evaluations) We want to scale these tests from a handful of questions to 100s of questions to measure the quality and safety of the application.  Automated evaluation scripts leveraging the Azure AI Evaluation SDK will enable us to use a predefined list of questions, answers, context and ground truth to submit into these models.  The results returned by these models will be evaluated by an “AI-Judge” (LLM model) to rate their quality, safety and reason for their scores.  These results will be saved into Microsoft Foundry.
+In Challenge 1, we tested our application with a small subset of questions and had a human judge to gauge their accuracy (Manual Evaluations). We want to scale these tests from a handful of questions to hundreds of questions to measure the quality and safety of the application.  Automated evaluation scripts leveraging the Azure AI Evaluation SDK will enable us to use a predefined list of questions, answers, context and ground truth to submit into these models.  The results returned by these models will be evaluated by an “AI-Judge” (LLM model) to rate their quality, safety and reason for their scores.  These results will be saved into Microsoft Foundry.
 
 1. Review the [list of questions](/evals/ground_truth.jsonl) to assess whether these questions are representative of the questions users will ask the HR Q&A application.  There are open-source frameworks that can generate a list of question and answer pairs.  In this repo, there is a [Generate Ground Truth data script](https://github.com/Azure-Samples/azure-search-openai-demo/blob/main/docs/evaluation.md#generate-ground-truth-data) that generates questions/answer pairs that humans should review to ensure their quality.  Due to time/costs, we will only leverage the pre-defined list and will not generate any new questions.
 
@@ -83,7 +83,7 @@ Automated Quality & Safety evaluations have validated our application meets our 
 
 </br>
 
-### Lab 3- Run Red Teaming Agent in Microsoft Foundry
+### Lab 2.3- Run Red Teaming Agent in Microsoft Foundry
 
 The AI Red Team Agent will be able to assess risk categories and attack strategies to assess the Attack Success Rate of your application.  The lower the score, the more secure your application.  The justification for these tests is to run simulations of attacks based on known threats.  It is recommended to conduct both automated and human red teaming to cover the known and unknown attack strategies before you roll out to production.
 
