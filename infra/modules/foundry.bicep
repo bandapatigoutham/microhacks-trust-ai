@@ -37,6 +37,15 @@ param embeddingModel string
 @description('Embedding model capacity (tokens per minute in thousands)')
 param embeddingModelCapacity int
 
+@description('Eval model')
+param evalModel string
+
+@description('Eval model version')
+param evalModelVersion string
+
+@description('Eval model capacity (tokens per minute in thousands)')
+param evalModelCapacity int
+
 @description('Principal ID of the user running deployment (for role assignments)')
 param deployingUserPrincipalId string
 
@@ -120,6 +129,23 @@ resource chatDeployment 'Microsoft.CognitiveServices/accounts/deployments@2025-0
   }
 }
 
+resource evalDeployment 'Microsoft.CognitiveServices/accounts/deployments@2025-04-01-preview' = {
+  parent: aiServices
+  name: evalModel
+  sku: {
+    name: 'GlobalStandard'
+    capacity: evalModelCapacity
+  }
+  properties: {
+    model: {
+      format: 'OpenAI'
+      name: evalModel
+      version: evalModelVersion
+    }
+  }
+  dependsOn: [chatDeployment]
+}
+
 // Embedding Model Deployment
 resource embeddingDeployment 'Microsoft.CognitiveServices/accounts/deployments@2025-04-01-preview' = {
   parent: aiServices
@@ -134,7 +160,7 @@ resource embeddingDeployment 'Microsoft.CognitiveServices/accounts/deployments@2
       name: embeddingModel
     }
   }
-  dependsOn: [chatDeployment]
+  dependsOn: [evalDeployment]
 }
 
 // AI Search Service
@@ -414,3 +440,4 @@ output appInsightsConnectionString string = appInsights.properties.ConnectionStr
 output logAnalyticsWorkspaceId string = logAnalytics.id
 output logAnalyticsCustomerId string = logAnalytics.properties.customerId
 output logAnalyticsSharedKey string = logAnalytics.listKeys().primarySharedKey
+output evalModel string = evalModel

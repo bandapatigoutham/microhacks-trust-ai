@@ -21,6 +21,9 @@ hooks:
       Write-Host "Timestamp: $(Get-Date)"
       Write-Host ""
       
+      # Activate virtual environment if it exists
+      if (Test-Path ".evalenv\Scripts\Activate.ps1") {. .evalenv\Scripts\Activate.ps1}
+
       Push-Location scripts
       
       Write-Host "----------------------------------------------"
@@ -50,8 +53,16 @@ hooks:
       Write-Host ""
       
       Pop-Location
-      
-      Write-Host "=============================================="
-      Write-Host "POST-PROVISION HOOKS COMPLETED"
-      Write-Host "Finished at: $(Get-Date)"
-      Write-Host "=============================================="
+
+   postup:
+     shell: pwsh
+     interactive: true
+     run: |
+       Write-Host "=============================================="
+       Write-Host "Deployment Complete"
+       Write-Host "Finished at: $(Get-Date)"
+       Write-Host "=============================================="
+       Write-Host ""
+       $APP_URL = az containerapp show --name "$AZURE_CONTAINER_APP_NAME" --resource-group "$AZURE_RESOURCE_GROUP" --query "properties.configuration.ingress.fqdn" -o tsv
+       Write-Host "🚀 Application URL: https://$APP_URL"
+       Write-Host ""

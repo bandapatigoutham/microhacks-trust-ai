@@ -23,6 +23,15 @@ param chatModelCapacity int = 100
 @description('Embedding model capacity (tokens per minute in thousands)')
 param embeddingModelCapacity int = 80
 
+@description('Eval model name')
+param evalModel string = 'gpt-4o'
+
+@description('Eval model version')
+param evalModelVersion string = '2024-08-06'
+
+@description('Eval model capacity (tokens per minute in thousands)')
+param evalModelCapacity int = 100
+
 var abbrs = loadJsonContent('./abbreviations.json')
 var resourceToken = toLower(uniqueString(subscription().id, environmentName, location))
 var tags = {
@@ -46,6 +55,9 @@ module foundry './modules/foundry.bicep' = {
     chatModelCapacity: chatModelCapacity
     embeddingModel: embeddingModel
     embeddingModelCapacity: embeddingModelCapacity
+    evalModel: evalModel
+    evalModelVersion: evalModelVersion
+    evalModelCapacity: evalModelCapacity
     deployingUserPrincipalId: az.deployer().objectId
   }
 }
@@ -87,6 +99,7 @@ output AZURE_APPINSIGHTS_NAME string = foundry.outputs.appInsightsName
 output AZURE_APPINSIGHTS_CONNECTION_STRING string = foundry.outputs.appInsightsConnectionString
 output AZURE_CHAT_MODEL string = chatModel
 output AZURE_EMBEDDING_MODEL string = embeddingModel
+output AZURE_EVAL_MODEL string = foundry.outputs.evalModel
 output AZURE_CONTAINER_REGISTRY_NAME string = containerApps.outputs.acrName
 output AZURE_CONTAINER_REGISTRY_SERVER string = containerApps.outputs.acrLoginServer
 output AZURE_CONTAINER_APP_NAME string = containerApps.outputs.containerAppName
