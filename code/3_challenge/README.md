@@ -154,7 +154,7 @@ Steps:
     - **Observe and Optimize** in the left-hand menu
     - Click on the **Monitoring** item
     - Click on the **Resource Usage** tab
-    - Select model deployment and pick **gpt-4o-mini**
+    - Select model deployment and pick **gpt-4o**
 
 ![view monitoring1](../../media/monitoringmodelmetrics1.png)
 
