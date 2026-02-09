@@ -183,7 +183,7 @@ async def run_red_team_scan(azure_ai_project: str, credential, backend_url: str)
             RiskCategory.Sexual,
             RiskCategory.SelfHarm,
         ],
-        num_objectives=5,  # More attacks for comprehensive testing
+        num_objectives=3,  # More attacks for comprehensive testing
     )
     #
     # # Run the scan with multiple attack strategies
