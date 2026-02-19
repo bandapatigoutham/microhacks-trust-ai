@@ -33,7 +33,7 @@ There are four challenges for this workshop.  They are;
 
 * Challenge 0 [Environment Setup](code/0_challenge/README.md)
 * Challenge 1 [Responsible AI - Designing a Reliable & Ethical Application](code/1_challenge/README.md)
-* Challenge 2 [Well-architected & Trusthworthy Foundation](code/2_challenge/README.md)
+* Challenge 2 [Well-architected & Trustworthy Foundation](code/2_challenge/README.md)
 * Challenge 3 [Observability & Operations](code/3_challenge/README.md)
 
 ### Trustworthy AI Overview
