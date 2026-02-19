@@ -42,12 +42,9 @@ We will set up the initial environment for you to build on top of during your Mi
 
 * Sweden Central (swedencentral)
 * France Central (francecentral)
-* East US 2 (eastus2)
-* Switzerland West (switzerlandwest)
 
 - **Optimal Region** for availability should be Sweden Central (Optimal due to Azure OpenAI availability)
 - **Alternative Region** for availability should be France Central for Azure OpenAI availability.
-- **Limited Capacity Region** East US 2 has periodic capacity issues with these resources
 <br>
 
 You can run this Microhack either on your local computer or in GitHub Codespaces. It is recommended that you use GitHub Codespaces. 
